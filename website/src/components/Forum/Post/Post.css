@@ -1,0 +1,9 @@
+.post {
+    width: 320px; 
+    background: gray;
+    padding: 10px;
+    padding-block-end: 10px;
+    border: 5px solid gray;
+    margin: 15px auto;
+    color: aliceblue;
+}

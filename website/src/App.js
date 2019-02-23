@@ -6,9 +6,11 @@ import Forum from './components/Forum/Forum/Forum.js';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Forum />
-      </div>
+      <body>
+        <div className="App">
+          <Forum />
+        </div>
+      </body>
     );
   }
 }
