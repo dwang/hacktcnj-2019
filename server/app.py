@@ -1,5 +1,8 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+import database
+import json
+import time
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -16,6 +19,7 @@ def messageReceived(methods=['GET', 'POST']):
 def handle_my_custom_event(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
     socketio.emit('my response', json, callback=messageReceived)
+    database.addPost(json["user_name"],json["message"],time.time())
 
 if __name__=="__main__":
     SocketIO.run(app, debug=True, host="0.0.0.0")
