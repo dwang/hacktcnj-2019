@@ -7,7 +7,7 @@ class Forum extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      postList: ["ok", "test", "um"]
+      postList: []
     };
     this.postIncident = this.postIncident.bind(this);
   }

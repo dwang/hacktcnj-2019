@@ -1,12 +1,16 @@
 import React from 'react';
+import './Input.css';
 
 class Input extends React.Component {
-
   handleKeyPress(event) {
     if (event.key === 'Enter') {
-      this.props.postIncident(event.target.value);
-      event.target.value = '';
-      event.preventDefault();
+      if (event.target.value === "") {
+        alert('Please enter your incident!')
+      } else {
+        this.props.postIncident(event.target.value);
+        event.target.value = '';
+        event.preventDefault();
+      }
     }
   }
 
@@ -16,7 +20,8 @@ class Input extends React.Component {
         <input
           placeholder="What is your incident?"
           onKeyPress={this.handleKeyPress.bind(this)}
-          id='form' />
+          id='form'
+          required="required" />
       </div>
     )
   }
