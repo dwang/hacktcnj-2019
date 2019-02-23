@@ -5,10 +5,11 @@ class PostList extends React.Component {
   render() {
     return (
       <div>
-        <Post message="hi" />
-        <Post message="hi" />
-        <Post message="hi" />
-        <Post message="hi" />
+      {
+        this.props.postList.map(message => {
+          return <Post message={message} />
+        })
+      }
       </div>
     )
   }

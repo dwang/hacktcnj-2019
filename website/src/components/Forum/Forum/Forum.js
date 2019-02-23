@@ -7,13 +7,23 @@ class Forum extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      postList: ["ok", "ok", "ok"]
+      postList: ["ok", "test", "um"]
     };
+    this.postIncident = this.postIncident.bind(this);
   }
+
+  postIncident(e) {
+    let list = this.state.postList;
+    list.unshift(e);
+    this.setState({
+      postList: list
+    })
+  }
+
   render() {
     return (
       <div className="container">
-        <Input />
+        <Input postIncident={this.postIncident}/>
         <PostList postList={this.state.postList}/>
       </div>
     )
