@@ -15,7 +15,7 @@ class Forum extends React.Component {
 
   componentDidMount() {
     const array = [];
-    const posts = fetch('https://reliefgrid.net/api/addIncident')
+    const posts = fetch('https://reliefgrid.net/api/getIncidents')
                         .then(response => {
                           response.map(post => {
                           array.push(post.message);
