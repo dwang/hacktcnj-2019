@@ -6,9 +6,9 @@ import PageSelect from './components/TopNavBar/PageSelect/PageSelect';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faFire } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faFire, faTrafficLight, faHome } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faBars, faFire)
+library.add(faBars, faFire, faTrafficLight, faHome)
 
 class App extends Component {
   constructor(props) {
