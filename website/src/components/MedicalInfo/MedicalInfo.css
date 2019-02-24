@@ -1,0 +1,22 @@
+.category {
+    opacity: 0.4;
+    text-align: center;
+    color: aliceblue;
+    padding: 40px;
+    margin: 0;
+    font-size: 25px;
+    box-sizing: border-box;
+}
+
+#red {
+  background-color: red;
+}
+
+#orange {
+  background-color: orange;
+}
+
+.titleHeader {
+  color: aliceblue;
+  font-size: 60px;
+}

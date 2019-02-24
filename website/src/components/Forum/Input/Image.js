@@ -34,4 +34,4 @@ class Image extends React.Component {
     }
 }
 
-export default Image
+export default Image;

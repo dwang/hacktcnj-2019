@@ -3,41 +3,18 @@ import './Input.css';
 import Image from '../Input/Image.js';
 
 class Input extends React.Component {
-
-  constructor() {
-    super();
-    this.state = {
-        name: '',
-        message: ''
-    }
-  }
-
-
-  handleUsername(event) {
-    if (event.key === 'Enter') {
-      if (event.target.value.length <= 1) 
-        alert('Please enter in a valid username!')
-      else {
-        this.state.name = event.target.value;
-        console.log(this.props.name);
-        event.preventDefault();
-      }
-    }
-  }
-
-
   handleKeyPress(event) {
     if (event.key === 'Enter') {
       if (event.target.value === "") {
         alert('Please enter your incident!')
       } else {
-        this.setState ({name: event.target.value});
+        this.props.postIncident(event.target.value);
         event.target.value = '';
         event.preventDefault();
       }
     }
   }
-  
+
 
   render() {
     return (
