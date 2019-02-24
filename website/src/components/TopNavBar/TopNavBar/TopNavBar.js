@@ -22,6 +22,9 @@ class TopNavBar extends React.Component {
   }
 
   handleButton(e) {
+    this.setState({
+      showNav: false
+    })
     let event = e.currentTarget.innerHTML;
     if (event === "Home") {
       this.props.clickHome();
