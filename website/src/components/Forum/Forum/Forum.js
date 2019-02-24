@@ -16,10 +16,12 @@ class Forum extends React.Component {
   componentDidMount() {
     const array = [];
     const posts = fetch('https://reliefgrid.net/api/getIncidents')
-                        .then(result => {
+                        .then(response => {
+                          response.json()
+                        }).then({result => {
                           result.map(post => {
                           array.push(post.message);
-                        })})
+                        })});
     this.setState({
       postList: array
     });
