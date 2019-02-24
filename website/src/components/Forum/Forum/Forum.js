@@ -25,6 +25,7 @@ class Forum extends React.Component {
     return (
       <div className="container">
         <Input postIncident={this.postIncident} />
+        <Image />
         <PostList postList={this.state.postList} />
       </div>
     )
