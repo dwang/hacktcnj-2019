@@ -1,5 +1,5 @@
 .category {
-    opacity: 0.2;
+    opacity: 0.4;
     text-align: center;
     color: aliceblue;
     padding: 40px;
@@ -17,6 +17,6 @@
 }
 
 .titleHeader {
-  color: black;
+  color: aliceblue;
   font-size: 60px;
 }
