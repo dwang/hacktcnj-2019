@@ -5,7 +5,12 @@ input {
   border: 5px solid #b0b2b2;
   border-radius: 10px;
   margin: 15px auto;
-  color: #565656;
+  color: #b0b2b2;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 8px 0 dodgerblue;
 }
 
 ::placeholder {
