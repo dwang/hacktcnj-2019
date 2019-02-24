@@ -25,12 +25,14 @@ class Image extends React.Component {
         this.setState({file:e.target.files[0]});
     }
     render() {
-        return (
+        return()=>{
+        const { fileName } = this.state;
         <div>
             <input type="file" name="image" onChange= {this.onChange} />
+            <input type="hidden" name="image_name" value={ fileName }/>
             <button type="submit">Submit</button>
         </div>
-        )
+        }
     }
 }
 
