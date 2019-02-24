@@ -14,10 +14,15 @@ class Forum extends React.Component {
   }
 
   componentDidMount() {
-    
+    const array = [];
+    const posts = fetch('https://reliefgrid.net/api/addIncident')
+                        .then(response => {
+                          response.map(post => {
+                          array.push(post.message);
+                        })})
     this.setState({
-      postList: ['lol']
-    })
+      postList: array
+    });
   }
 
   postIncident(e) {
