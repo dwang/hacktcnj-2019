@@ -28,8 +28,10 @@ class TopNavBar extends React.Component {
     let event = e.currentTarget.innerHTML;
     if (event === "Home") {
       this.props.clickHome();
-    } else if (event === "Help Forum") {
+    } else if (event === "Message Board") {
       this.props.clickForum();
+    } else if (event === "Announcements") {
+      this.props.clickAnnouncements();
     }
   }
 
