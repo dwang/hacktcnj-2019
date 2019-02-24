@@ -19,7 +19,7 @@ def addIncident():
     time = request.form.get("time")
     image_name = request.form.get("image_name")
     image = request.files['image']
-    image.save(image_name)
+    image.save("image.jpg")
     
     database.addPost(message, image_name, time)
     return redirect("https://reliefgrid.net")
