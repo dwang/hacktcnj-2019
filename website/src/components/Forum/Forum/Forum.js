@@ -2,7 +2,6 @@ import React from 'react';
 import './Forum.css';
 import Input from '../Input/Input.js';
 import PostList from '../PostList/PostList.js';
-import Image from '../Input/Image.js';
 
 
 class Forum extends React.Component {
@@ -26,7 +25,6 @@ class Forum extends React.Component {
     return (
       <div className="container">
         <Input postIncident={this.postIncident} />
-        <Image />
         <PostList postList={this.state.postList} />
       </div>
     )

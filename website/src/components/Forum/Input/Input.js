@@ -1,5 +1,6 @@
 import React from 'react';
 import './Input.css';
+import Image from '../Input/Image.js';
 
 class Input extends React.Component {
 
@@ -41,18 +42,17 @@ class Input extends React.Component {
   render() {
     return (
       <div id="input">
-        <input
-          placeholder="Your Full Name"
-          onKeyPress={this.handleUsername.bind(this)}
-          id='form'
-          required="required" />
-
-        <input
-          placeholder="What is your incident?"
-          onKeyPress={this.handleKeyPress.bind(this)}
-          id='form'
-          required="required" />
-
+        <form action="https://reliefgrid.net/api/addIncident"
+              method="post"
+              encType="multipart/form-data"
+              id="upload-form">
+          <input
+            placeholder="What is your incident?"
+            onKeyPress={this.handleKeyPress.bind(this)}
+            id='form'
+            required="required" />
+          <Image />
+        </form>
       </div>
     )
   }
