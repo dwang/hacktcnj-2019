@@ -6,7 +6,7 @@ import logging
 
 logging.basicConfig(filename="hacktcnj.log", level=logging.INFO)
 
-db = MongoClient("reliefgrid.net", 27017)['hacktcnj']
+db = MongoClient("127.0.0.1", 27017, connect=False)['hacktcnj']
 posts = db.posts
 
 
