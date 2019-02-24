@@ -11,6 +11,7 @@ class Image extends React.Component {
         this.onFormSubmit = this.onFormSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
     }
+
     onFormSubmit(e){
         e.preventDefault();
         const formData = new FormData();
@@ -21,16 +22,18 @@ class Image extends React.Component {
             }
         };
     }
+
     onChange(e) {
         this.setState({file:e.target.files[0]});
     }
+    
     render() {
-        return (
-        <div className="buttonWrapper">
-            <input type="file" name="image" onChange={this.onChange} className="inputfile"/>
-            <label for="image">Choose a file...</label>
-            <button type="submit" className="btn">Submit</button>
-        </div>
+        return(
+            <div>
+                <input type="file" name="image" onChange= {this.onChange} />
+                <input type="hidden" name="image_name" value={ this.state.file }/>
+                <button type="submit">Submit</button>
+            </div>
         )
     }
 }

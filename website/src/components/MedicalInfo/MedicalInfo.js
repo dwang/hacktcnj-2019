@@ -16,7 +16,7 @@ class MedicalInfo extends React.Component {
           <h2>
             Flush the burned area with cool running water for several minutes. Do not use ice. <br/><br/>
             Apply a light gauze bandage. <br/><br/>
-            Do not apply ointments, butter, or oily remedies to the burn. <br/><br/>
+            Do not apply certain ointments, butter, or oily remedies to the burn. <br/><br/>
             Take ibuprofen or acetaminophen for pain relief if necessary. <br/><br/>
             Do not break any blisters that may have formed.</h2>
         </div>

@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="build/static", template_folder="build")
 
 
 @app.route('/')
-def serve(name=None):
-    return render_template('session.html', name=name)
+def serve():
+    return render_template('index.html')
 
 
 if __name__=="__main__":
