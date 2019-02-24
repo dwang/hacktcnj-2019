@@ -10,10 +10,11 @@ db = MongoClient("127.0.0.1", 27017, connect=False)['hacktcnj']
 posts = db.posts
 
 
-def addPost(message, image_name, time):
+def addPost(message, image_name, label, time):
     post = {
         "message": str(message),
         "image_name": str(image_name),
+        "label": str(label)
         "time": str(time)
     }
 

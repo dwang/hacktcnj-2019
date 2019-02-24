@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import database
 import time
+import image_recognition
 
 app = Flask(__name__)
 
@@ -18,12 +19,12 @@ def getIncidents():
 def addIncident():
     message = request.form.get("message")
     current_time = time.time()
-    image_name = request.form.get("image_name")
     image_name = "image.jpg"
+    label = image_recognition.get_labels(image_name)
     image = request.files["image"]
     image.save(image_name)
     
-    database.addPost(message, image_name, current_time)
+    database.addPost(message, image_name, label, current_time)
     return redirect("https://reliefgrid.net")
 
 
