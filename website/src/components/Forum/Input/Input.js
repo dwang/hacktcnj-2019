@@ -26,7 +26,6 @@ class Input extends React.Component {
           <input
             placeholder="What is your incident?"
             onKeyPress={this.handleKeyPress.bind(this)}
-            id='form'
             required="required" />
           <Image />
         </form>

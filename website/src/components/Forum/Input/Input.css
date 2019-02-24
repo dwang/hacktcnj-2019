@@ -1,6 +1,9 @@
-#input{
+#upload-input{
   display: flex;
   flex-direction: row;
+  margin: auto;
+  justify-content: center;
+  width: 30%;
 }
 
 input {
@@ -9,9 +12,9 @@ input {
   padding-block-end: 10px;
   border: 5px solid #b0b2b2;
   border-radius: 10px;
-  margin: 10px auto;
+  margin: auto;
   color: #b0b2b2;
-
+  background-color: aliceblue;
 }
 
 input:focus {

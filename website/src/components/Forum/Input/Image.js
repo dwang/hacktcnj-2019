@@ -26,9 +26,10 @@ class Image extends React.Component {
     }
     render() {
         return (
-        <div>
-            <input type="file" name="image" onChange= {this.onChange} />
-            <button type="submit">Submit</button>
+        <div className="buttonWrapper">
+            <input type="file" name="image" onChange={this.onChange} className="inputfile"/>
+            <label for="image">Choose a file...</label>
+            <button type="submit" className="btn">Submit</button>
         </div>
         )
     }
