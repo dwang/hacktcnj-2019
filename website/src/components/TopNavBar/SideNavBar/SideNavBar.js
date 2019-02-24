@@ -16,7 +16,7 @@ class SideNavBar extends React.Component {
             <div className="subpages" onClick={this.props.buttonClick}>Home</div>,
             <div className="subpages" onClick={this.props.buttonClick}>Announcements</div>,
             <div className="subpages" onClick={this.props.buttonClick}>Message Board</div>,
-            <div className="subpages" onClick={this.props.buttonClick}>Medical Info</div>]}
+            <div className="subpages" onClick={this.props.buttonClick}>Medical Guide</div>]}
           itemStyle      =  {{backgroundColor: '#fff', padding: 0, color: '#565656'}}
           itemHoverStyle =  {{backgroundColor: '#C93461', color: 'aliceblue'}} />
       </div>
