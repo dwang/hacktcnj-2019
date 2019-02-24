@@ -15,11 +15,12 @@ def serve(name=None):
 def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
 
-@socketio.on('my event')
+@socketio.on('new message')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
-    print('received my event: ' + str(json))
-    socketio.emit('my response', json, callback=messageReceived)
-    database.addPost(json["user_name"],json["message"],time.time())
+    print('received new message: ' + str(json))
+    database.addPost(json["user_name"], json["message"], time.time())
+    print(database.getPost())
+    socketio.emit('push message', database.getPost())
 
 if __name__=="__main__":
     SocketIO.run(app, debug=True, host="0.0.0.0")

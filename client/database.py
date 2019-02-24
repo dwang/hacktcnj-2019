@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import time
 import random
-
+import json
 import logging
 
 logging.basicConfig(filename="hacktcnj.log", level=logging.INFO)
@@ -20,10 +20,10 @@ def addPost(user, message, time):
     posts.insert_one(post)
 
 def getPost():
-    return posts
+    for document in posts.find({}):
+        print(document)
 
 def clearDatabase():
-    users.delete_many({})
     posts.delete_many({})
 
 if __name__ == "__main__":

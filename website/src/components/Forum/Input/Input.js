@@ -14,13 +14,6 @@ class Input extends React.Component {
     }
   }
 
-  // socket.on( 'my response', function( msg ) {
-  //   console.log( msg )
-  //   if( typeof msg.user_name !== 'undefined' ) {
-  //     // Add post msg.message
-  //   }
-  // })
-
   render() {
     return (
       <div>
