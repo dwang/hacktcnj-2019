@@ -1,5 +1,4 @@
 from pymongo import MongoClient
-import time
 import random
 import json
 import logging
@@ -14,7 +13,7 @@ def addPost(message, image_name, label, current_time):
     post = {
         "message": str(message),
         "image_name": str(image_name),
-        "label": str(label)
+        "label": str(label),
         "current_time": str(current_time)
     }
 
