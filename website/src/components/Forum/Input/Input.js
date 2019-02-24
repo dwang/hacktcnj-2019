@@ -52,6 +52,7 @@ class Input extends React.Component {
           onKeyPress={this.handleKeyPress.bind(this)}
           id='form'
           required="required" />
+
       </div>
     )
   }

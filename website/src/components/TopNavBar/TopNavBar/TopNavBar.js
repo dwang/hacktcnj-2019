@@ -32,6 +32,8 @@ class TopNavBar extends React.Component {
       this.props.clickForum();
     } else if (event === "Announcements") {
       this.props.clickAnnouncements();
+    } else if (event === "Medical Info") {
+      this.props.clickMedicalInfo();
     }
   }
 
