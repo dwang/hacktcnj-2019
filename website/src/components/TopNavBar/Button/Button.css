@@ -1,4 +1,6 @@
 .button {
   font-size: 25px;
   color: aliceblue;
+  cursor: pointer;
+  padding-right: 20px;
 }
