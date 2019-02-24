@@ -17,10 +17,12 @@ class App extends Component {
       showNav: false,
       show: [
         {showHome: true},
+        {showAnnouncements: false},
         {showForum: false}
       ]
     };
     this.selectHome = this.selectHome.bind(this);
+    this.selectAnnouncements = this.selectAnnouncements.bind(this);
     this.selectForum = this.selectForum.bind(this);
   }
 
@@ -28,6 +30,17 @@ class App extends Component {
     this.setState({
       show: [
         {showHome: true},
+        {showAnnouncements: false},
+        {showForum: false}
+      ]
+    })
+  }
+
+  selectAnnouncements() {
+    this.setState({
+      show: [
+        {showHome: false},
+        {showAnnouncements: true},
         {showForum: false}
       ]
     })
@@ -37,6 +50,7 @@ class App extends Component {
     this.setState({
       show: [
         {showHome: false},
+        {showAnnouncements: false},
         {showForum: true}
       ]
     })
@@ -46,7 +60,7 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <TopNavBar clickHome={this.selectHome} clickForum={this.selectForum}/>
+          <TopNavBar clickHome={this.selectHome} clickAnnouncements={this.selectAnnouncements} clickForum={this.selectForum} />
           <PageSelect selectPage={this.state.show} />
         </div>
     );
