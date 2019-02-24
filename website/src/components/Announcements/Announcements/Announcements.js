@@ -1,7 +1,6 @@
 import React from 'react';
 import './Announcements.css';
 import PostList from '../PostList/PostList.js';
-import io from 'socket.io-client';
 
 class Forum extends React.Component {
   constructor(props) {
@@ -11,9 +10,6 @@ class Forum extends React.Component {
     };
     this.postIncident = this.postIncident.bind(this);
   }
-
-  socket = io.connect('http://127.0.0.1:5000');
-
 
   postIncident(username,message) {
     let list = this.state.postList;

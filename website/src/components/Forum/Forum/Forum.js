@@ -1,7 +1,6 @@
 import React from 'react';
 import './Forum.css';
 import Input from '../Input/Input.js';
-import Image from '../Input/Image.js'
 import PostList from '../PostList/PostList.js';
 
 class Forum extends React.Component {
