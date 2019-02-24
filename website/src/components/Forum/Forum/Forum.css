@@ -8,3 +8,73 @@ body {
   margin: 20px;
   text-align: center;
 }
+
+#form {
+  width: 25%;
+  background: #b0b2b2;
+  background-color: aliceblue;
+  padding: 15px;
+  border: 5px solid #b0b2b2;
+  border-radius: 10px;
+  margin: 15px auto;
+  color: #b0b2b2;
+  word-wrap: break-word;
+}
+
+.inputWrapper {
+  display: inline-block;
+  width: 100%;
+}
+
+.inputfile {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: aliceblue;
+    background-color: #b0b2b2;
+    border-radius: 10px;
+    border: 5px solid #b0b2b2;
+    display: inline-block;
+    font-family: Arial, serif;
+    padding: 20px auto;
+    margin: 10px;
+}
+
+.inputfile + label:focus {
+    background-color: aliceblue;
+    color: #b0b2b2;
+    border-color: #b0b2b2;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.btn {
+  width: 30%;
+  background-color: #565656;
+  padding: 10px;
+  border: 5px solid #565656;
+  border-radius: 10px;
+  margin: 5px auto;
+  color: aliceblue;
+  word-wrap: break-word;
+  display: block;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:focus {
+  color: #565656;
+  background-color: aliceblue;
+}
