@@ -1,13 +1,14 @@
 import React from 'react';
+import './Home.css'
 
 class Home extends React.Component {
   render() {
     return (
-      <div>
-        <div className="image">
-          <image src={''} />
-        </div>
-      </div>
+      <body className = "background">
+        {/* <div className = "background"> */}
+        <h1>hello</h1> 
+      {/* </div> */}
+      </body>
     )
   }
 }
