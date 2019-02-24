@@ -5,6 +5,10 @@
     opacity: 0.5;
 } */
 
+.background {
+  margin-top: 0;
+}
+
 .title {
     font-style: italic;
     color: azure;
@@ -20,12 +24,39 @@
 .red {
     background: red;
     opacity: 0.2;
-    color: aliceblue;
     text-align: center;
-    font-size: 80%;
-    font-style: italic;
+    color: aliceblue;
 }
 
-.grid-container {
-    display: grid;
+.description {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.flexbox {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  font-size: 80%;
+  font-style: italic;
+  padding: 20px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33%;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+  font-size: 40px;
 }

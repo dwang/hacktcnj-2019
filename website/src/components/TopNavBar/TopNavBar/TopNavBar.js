@@ -38,8 +38,11 @@ class TopNavBar extends React.Component {
   render() {
     return(
       <div className="topNav">
-        <div className="button">
-          <Button onClick={this.handleClick} />
+        <div className="topNavContainer">
+          <div className="buttonColumn">
+            <Button onClick={this.handleClick} />
+          </div>
+          <h1 className="projectTitle">Project Name</h1>
         </div>
         <SideNavBar handleNav={this.state.showNav}
                     onHideNav={()=>this.setState({showNav:false})}
