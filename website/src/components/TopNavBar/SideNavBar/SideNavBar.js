@@ -10,12 +10,13 @@ class SideNavBar extends React.Component {
         <SideNav
           showNav={this.props.handleNav}
           onHideNav={this.props.onHideNav}
-          title={<div className="sidebarTitle">Locating Disasters</div>}
+          title={<div className="sidebarTitle">ReliefGrid</div>}
           titleStyle={{backgroundColor: '#3DB2C2'}}
           items={[
             <div className="subpages" onClick={this.props.buttonClick}>Home</div>,
             <div className="subpages" onClick={this.props.buttonClick}>Announcements</div>,
-            <div className="subpages" onClick={this.props.buttonClick}>Message Board</div>]}
+            <div className="subpages" onClick={this.props.buttonClick}>Message Board</div>,
+            <div className="subpages" onClick={this.props.buttonClick}>Medical Info</div>]}
           itemStyle      =  {{backgroundColor: '#fff', padding: 0, color: '#565656'}}
           itemHoverStyle =  {{backgroundColor: '#C93461', color: 'aliceblue'}} />
       </div>

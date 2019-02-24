@@ -28,6 +28,14 @@
     color: aliceblue;
 }
 
+.blurple {
+    background: #482E74;
+    opacity: 0.4;
+    text-align: center;
+    color: aliceblue;
+    padding: 10px;
+}
+
 .description {
   margin-top: 0px;
   margin-bottom: 40px;
@@ -59,4 +67,19 @@
 
 .logo{
   font-size: 40px;
+}
+
+.work {
+    font-size: 22px;
+    text-decoration: underline;
+    text-align: justify left;
+}
+
+.brief {
+    font-size: 25px;
+    font-style: italic;
+}
+
+.test {
+    font-size:20px;
 }

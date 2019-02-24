@@ -2,6 +2,7 @@ import React from 'react';
 import Home from '../../Home/Home.js';
 import Forum from '../../Forum/Forum/Forum.js';
 import Announcements from '../../Announcements/Announcements/Announcements.js'
+import MedicalInfo from '../../MedicalInfo/MedicalInfo.js'
 
 class PageSelect extends React.Component {
   pageSelect(p) {
@@ -11,6 +12,8 @@ class PageSelect extends React.Component {
       return <Forum />;
     } else if (p.showAnnouncements) {
       return <Announcements />;
+    } else if (p.showMedicalInfo) {
+      return <MedicalInfo />
     }
   }
 

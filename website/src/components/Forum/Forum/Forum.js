@@ -1,36 +1,31 @@
 import React from 'react';
 import './Forum.css';
-import { postIncident, subscribeToIncident } from '../../../Socket.js';
 import Input from '../Input/Input.js';
 import Image from '../Input/Image.js'
 import PostList from '../PostList/PostList.js';
-import io from 'socket.io-client';
-
-
 
 class Forum extends React.Component {
-  constructor(props) {
+    constructor(props) {
     super(props);
     this.state = {
-      message: "",
       postList: []
     };
-
+    this.postIncident = this.postIncident.bind(this);
   }
 
-  componentDidMount () {
-    // subscribeToIncident((err, msg) => /*this.setState({postList: this.state.postList.unshift(msg)})*/ console.log(msg));
-
-    const socket = io('http://localhost:5000');
-    socket.on('push message', (data) => /*this.setState({postList: list.unshift(msg)*/ console.log(data));
+  postIncident(e) {
+    let list = this.state.postList;
+    list.unshift(e);
+    this.setState({
+      postList: list
+    })
   }
 
   render() {
     return (
       <div className="container">
-        <Input postIncident={postIncident}/>
-        <Image />
-        {this.state.list}
+        <Input postIncident={this.postIncident} />
+        <PostList postList={this.state.postList} />
       </div>
     )
   }
