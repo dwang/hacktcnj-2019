@@ -21,7 +21,7 @@ def addIncident():
     current_time = str(int(time.time() * 1000.0 / 13.0))
     image_name = current_time
     image = request.files["image"]
-    image.save(image_name)
+    image.save("images/" + image_name + ".jpg")
     label = image_recognition.get_labels(image_name)
 
     
