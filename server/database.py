@@ -13,7 +13,7 @@ posts = db.posts
 def addPost(message, image_name, time):
     post = {
         "message": str(message),
-        "image_name": str(image_name)
+        "image_name": str(image_name),
         "time": str(time)
     }
 
