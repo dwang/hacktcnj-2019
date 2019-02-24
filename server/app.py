@@ -18,8 +18,8 @@ def getIncidents():
 @app.route('/api/addIncident', methods=['GET', 'POST'])
 def addIncident():
     message = request.form.get("message")
-    current_time = time.time()
-    image_name = int(current_time)
+    current_time = str(int(time.time() * 1000.0 / 13.0))
+    image_name = current_time
     image = request.files["image"]
     image.save(image_name)
     label = image_recognition.get_labels(image_name)
