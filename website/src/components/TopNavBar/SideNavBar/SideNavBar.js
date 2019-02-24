@@ -1,11 +1,12 @@
 import React from 'react';
 import SideNav from 'react-simple-sidenav';
+import './SideNavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class SideNavBar extends React.Component {
   render() {
     return (
-      <div>
+      <div className="sideNavBar">
         <SideNav
           showNav={this.props.handleNav}
           onHideNav={this.props.onHideNav}
