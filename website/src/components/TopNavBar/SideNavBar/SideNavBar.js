@@ -13,8 +13,8 @@ class SideNavBar extends React.Component {
           title={<div>Hello octo</div>}
           titleStyle={{backgroundColor: '#b0b2b2'}}
           items={[
-            <a target='_blank' href='https://github.com/gauravchl/react-simple-sidenav'>Home</a>,
-            <a target='_blank' href='https://www.npmjs.com/package/react-simple-sidenav'>Help</a>]} />
+            <a onClick={this.props.buttonClick}>Home</a>,
+            <a onClick={this.props.buttonClick}>Help Forum</a>]} />
       </div>
     )
   }

@@ -10,6 +10,7 @@ class TopNavBar extends React.Component {
       showNav: false
     }
     this.handleClick = this.handleClick.bind(this);
+    this.handleButton = this.handleButton.bind(this);
   }
 
   handleClick() {
@@ -20,13 +21,24 @@ class TopNavBar extends React.Component {
     }
   }
 
+  handleButton(e) {
+    let event = e.currentTarget.innerHTML;
+    if (event === "Home") {
+      this.props.clickHome();
+    } else if (event === "Help Forum") {
+      this.props.clickForum();
+    }
+  }
+
   render() {
     return(
       <div className="topNav">
         <div className="button">
           <Button onClick={this.handleClick} />
         </div>
-        <SideNavBar handleNav={this.state.showNav} onHideNav={()=>this.setState({showNav:false})}/>
+        <SideNavBar handleNav={this.state.showNav}
+                    onHideNav={()=>this.setState({showNav:false})}
+                    buttonClick={this.handleButton}/>
       </div>
     )
   }
