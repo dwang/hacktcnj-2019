@@ -1,26 +1,28 @@
-from flask import Flask, render_template
-from flask_socketio import SocketIO
+from flask import Flask, render_template, request, redirect
 import database
 import json
-import time
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app)
+
 
 @app.route('/')
 def serve(name=None):
     return render_template('session.html', name=name)
 
-def messageReceived(methods=['GET', 'POST']):
-    print('message was received!!!')
+@app.route('/api/getIncidents')
+def getIncidents():
+    return database.getPosts()
 
-@socketio.on('new message')
-def handle_my_custom_event(json, methods=['GET', 'POST']):
-    print('received new message: ' + str(json))
-    database.addPost(json["user_name"], json["message"], time.time())
-    print(database.getPost())
-    socketio.emit('push message', database.getPost())
+
+@app.route('/api/addIncident', methods=['POST'])
+def addIncident():
+    user = request.form.get("user")
+    message = request.form.get("message")
+    time = request.form.get("time")
+
+    database.addIncident(user, message, time)
+    return redirect("https://reliefgrid.net")
+
 
 if __name__=="__main__":
-    SocketIO.run(app, debug=True, host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0")
