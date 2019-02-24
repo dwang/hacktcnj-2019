@@ -42,7 +42,7 @@ class TopNavBar extends React.Component {
           <div className="buttonColumn">
             <Button onClick={this.handleClick} />
           </div>
-          <h1 className="projectTitle">Project Name</h1>
+          <h1 className="projectTitle">ReliefGrid</h1>
         </div>
         <SideNavBar handleNav={this.state.showNav}
                     onHideNav={()=>this.setState({showNav:false})}

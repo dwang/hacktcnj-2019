@@ -17,7 +17,7 @@ class Forum extends React.Component {
 
   }
 
-  componentDidMount () {
+  componentDidMount() {
     // subscribeToIncident((err, msg) => /*this.setState({postList: this.state.postList.unshift(msg)})*/ console.log(msg));
 
     const socket = io('http://localhost:5000');
