@@ -27,6 +27,8 @@ def getPosts():
     for document in posts.find({}):
         returnValue.append(document)
 
+    return returnValue
+
 
 def clearDatabase():
     posts.delete_many({})

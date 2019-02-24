@@ -12,7 +12,7 @@ def index():
 
 @app.route('/api/getIncidents')
 def getIncidents():
-    return database.getPosts()
+    return str(database.getPosts())
 
 
 @app.route('/api/addIncident', methods=['GET', 'POST'])
