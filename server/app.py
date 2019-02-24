@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import database
+import time
 
 app = Flask(__name__)
 
@@ -16,12 +17,12 @@ def getIncidents():
 @app.route('/api/addIncident', methods=['POST'])
 def addIncident():
     message = request.form.get("message")
-    time = request.form.get("time")
+    current_time = time.time()
     image_name = request.form.get("image_name")
-    image = request.files['image']
+    image = request.files["image"]
     image.save("image.jpg")
     
-    database.addPost(message, image_name, time)
+    database.addPost(message, image_name, current_time)
     return redirect("https://reliefgrid.net")
 
 
