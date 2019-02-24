@@ -2,6 +2,7 @@ import React from 'react';
 import './Input.css';
 
 class Input extends React.Component {
+    
   handleKeyPress(event) {
     if (event.key === 'Enter') {
       if (event.target.value === "") {

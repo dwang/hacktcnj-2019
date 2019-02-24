@@ -1,9 +1,14 @@
 import React from 'react';
+import './Home.css'
 
 class Home extends React.Component {
   render() {
     return (
-      <div>hi</div>
+      <body className = "background">
+        {/* <div className = "background"> */}
+        <h1>hello</h1> 
+      {/* </div> */}
+      </body>
     )
   }
 }
