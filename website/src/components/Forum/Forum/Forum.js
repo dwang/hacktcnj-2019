@@ -2,6 +2,7 @@ import React from 'react';
 import './Forum.css';
 import { postIncident, subscribeToIncident } from '../../../Socket.js';
 import Input from '../Input/Input.js';
+import Image from '../Input/Image.js'
 import PostList from '../PostList/PostList.js';
 import io from 'socket.io-client';
 
@@ -28,6 +29,7 @@ class Forum extends React.Component {
     return (
       <div className="container">
         <Input postIncident={postIncident}/>
+        <Image />
         {this.state.list}
       </div>
     )
