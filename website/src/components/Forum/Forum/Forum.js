@@ -6,9 +6,18 @@ class Forum extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      postList: []
+      postList: [],
+      image: '+'
     };
     this.postIncident = this.postIncident.bind(this);
+    this.onChange = this.onChange.bind(this);
+  }
+
+  componentDidMount() {
+    
+    this.setState({
+      postList: ['lol']
+    })
   }
 
   postIncident(e) {
@@ -31,6 +40,19 @@ class Forum extends React.Component {
     }
   }
 
+  onChange(e) {
+    if (e.target.value !== '') {
+      let event = e.target.value;
+      let path = event.split("\\");
+      let length = path.length
+      this.setState({
+        image: path[length-1]
+      })
+    } else {
+      return;
+    }
+  }
+
   render() {
     return (
       <div className="container">
@@ -38,22 +60,21 @@ class Forum extends React.Component {
           action="https://reliefgrid.net/api/addIncident"
           method="post"
           encType="multipart/form-data"
-          id="upload-form"
-        >
-          <input
-            placeholder="Describe the incident"
-            onKeyPress={this.handleKeyPress.bind(this)}
-            id="form"
-            name="message"
-            required="required"
-          />
-
-          <div>
-            <input type="file" name="image" onChange={this.onChange} />
+          id="upload-form">
+          <div className="inputWrapper">
+            <input
+              placeholder="Describe the incident"
+              onKeyPress={this.handleKeyPress.bind(this)}
+              id="form"
+              name="message"
+              required="required"  />
+            <input type="file" name="image" id="image" className="inputfile" onChange={this.onChange} />
+            <label for="image" >{this.state.image}</label>
             <input type="hidden" name="image_name" value={this.state.file} />
-            <button type="submit">Submit</button>
           </div>
+          <button type="submit" className="btn">Submit</button>
         </form>
+        <PostList postList={this.state.postList} />
       </div>
     );
   }
