@@ -3,11 +3,11 @@ import database
 import time
 import image_recognition
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="build/static", template_folder="build")
 
 @app.route("/")
 def index():
-    return "hello, world"
+    return render_template('index.html')
 
 
 @app.route('/api/getIncidents')
@@ -19,10 +19,11 @@ def getIncidents():
 def addIncident():
     message = request.form.get("message")
     current_time = time.time()
-    image_name = "image.jpg"
-    label = image_recognition.get_labels(image_name)
+    image_name = int(current_time)
     image = request.files["image"]
     image.save(image_name)
+    label = image_recognition.get_labels(image_name)
+
     
     database.addPost(message, image_name, label, current_time)
     return redirect("https://reliefgrid.net")
