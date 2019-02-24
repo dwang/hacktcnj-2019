@@ -7,12 +7,19 @@ class Input extends React.Component {
       if (event.target.value === "") {
         alert('Please enter your incident!')
       } else {
-        this.props.postIncident(event.target.value);
+        this.props.postIncident("nani", event.target.value);
         event.target.value = '';
         event.preventDefault();
       }
     }
   }
+
+  // socket.on( 'my response', function( msg ) {
+  //   console.log( msg )
+  //   if( typeof msg.user_name !== 'undefined' ) {
+  //     // Add post msg.message
+  //   }
+  // })
 
   render() {
     return (
