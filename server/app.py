@@ -15,11 +15,13 @@ def getIncidents():
 
 @app.route('/api/addIncident', methods=['POST'])
 def addIncident():
-    user = request.form.get("user")
     message = request.form.get("message")
     time = request.form.get("time")
-
-    database.addIncident(user, message, time)
+    image_name = request.form.get("image_name")
+    image = request.files['image']
+    image.save(image_name)
+    
+    database.addIncident(message, image_name, time)
     return redirect("https://reliefgrid.net")
 
 

@@ -10,10 +10,10 @@ db = MongoClient("reliefgrid.net", 27017)['hacktcnj']
 posts = db.posts
 
 
-def addPost(user, message, time):
+def addPost(message, image_name, time):
     post = {
-        "user": str(user),
         "message": str(message),
+        "image_name": str(image_name)
         "time": str(time)
     }
 
